@@ -15,7 +15,18 @@ public class GeradorProva {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.out.println("Ola mundo");
+        Prova x = new Prova("POO");
+        x.setLocal("Lab 3 - Bloco B6");
+        x.setdata("2018-08-28");
+        System.out.println(x.obtemDetalhes());
+        
+        Discursiva d = new Discursiva();
+        d.setPergunta("Qual seu nome?");
+        d.setPeso(0);
+        d.setCriteriosCorrecao("Saber o proprio nome");
+        
+        Objetiva o = new Objetiva();
+        
     }
-    
+
 }
