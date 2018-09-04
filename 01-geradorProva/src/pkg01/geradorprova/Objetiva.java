@@ -7,16 +7,9 @@ package pkg01.geradorprova;
 
 /**
  *
- * @author josegabrieltomazellisilva
+ * @author 6093914
  */
 final class Objetiva extends Questao {
-
-    private String[] opcoes;
-    private int respostaCorreta;
-
-    public Objetiva() {
-        this.opcoes = new String[5];
-    }
 
     /**
      * @return the opcoes
@@ -44,6 +37,13 @@ final class Objetiva extends Questao {
      */
     public void setRespostaCorreta(int respostaCorreta) {
         this.respostaCorreta = respostaCorreta;
+    }
+
+    private String[] opcoes;
+    private int respostaCorreta;
+
+    public Objetiva() {
+        this.opcoes = new String[5];
     }
 
 }

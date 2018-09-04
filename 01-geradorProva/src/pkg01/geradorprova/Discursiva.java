@@ -7,14 +7,9 @@ package pkg01.geradorprova;
 
 /**
  *
- * @author josegabrieltomazellisilva
+ * @author 6093914
  */
-final class Discursiva extends Questao {
-
-    private String criteriosCorrecao;
-
-    public Discursiva() {
-    }
+public class Discursiva extends Questao{
 
     /**
      * @return the criteriosCorrecao
@@ -28,6 +23,10 @@ final class Discursiva extends Questao {
      */
     public void setCriteriosCorrecao(String criteriosCorrecao) {
         this.criteriosCorrecao = criteriosCorrecao;
+    }
+    private String criteriosCorrecao;
+
+    public Discursiva() {
     }
 
 }

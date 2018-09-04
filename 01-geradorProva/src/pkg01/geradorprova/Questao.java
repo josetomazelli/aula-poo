@@ -7,15 +7,12 @@ package pkg01.geradorprova;
 
 /**
  *
- * @author josegabrieltomazellisilva
+ * @author 6093914
  */
-public abstract class Questao {
+abstract class Questao {
 
     private String pergunta;
     private double peso;
-
-    public Questao() {
-    }
 
     /**
      * @return the pergunta
@@ -44,5 +41,4 @@ public abstract class Questao {
     public void setPeso(double peso) {
         this.peso = peso;
     }
-
 }
