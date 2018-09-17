@@ -11,9 +11,13 @@ package pkg01.geradorprova;
  */
 final class Objetiva extends Questao {
 
-    /**
-     * @return the opcoes
-     */
+    private String[] opcoes;
+    private int respostaCorreta;
+
+    public Objetiva() {
+        this.opcoes = new String[5];
+    }
+
     public String[] getOpcoes() {
         return opcoes;
     }
@@ -39,11 +43,15 @@ final class Objetiva extends Questao {
         this.respostaCorreta = respostaCorreta;
     }
 
-    private String[] opcoes;
-    private int respostaCorreta;
+    @Override
+    String retornaQuestao() {
+        String questao = "( " + this.getPeso() + ")- " + this.getPergunta() + "\r\n";
+        String op[] = this.getOpcoes();
+        for (int k = 0; k < 5; k++) {
+            questao += ((k + 1) + ")" + opcoes[k] + "\r\n");
 
-    public Objetiva() {
-        this.opcoes = new String[5];
+        }
+        return questao;
     }
 
 }

@@ -9,24 +9,24 @@ package pkg01.geradorprova;
  *
  * @author 6093914
  */
-public class Discursiva extends Questao{
+public class Discursiva extends Questao {
 
-    /**
-     * @return the criteriosCorrecao
-     */
-    public String getCriteriosCorrecao() {
-        return criteriosCorrecao;
+    private String criterio;
+
+    public String getCriterio() {
+        return criterio;
     }
 
     /**
-     * @param criteriosCorrecao the criteriosCorrecao to set
+     * @param criterio the criteriosCorrecao to set
      */
-    public void setCriteriosCorrecao(String criteriosCorrecao) {
-        this.criteriosCorrecao = criteriosCorrecao;
+    public void setCriterio(String criterio) {
+        this.criterio = criterio;
     }
-    private String criteriosCorrecao;
 
-    public Discursiva() {
+    @Override
+    String retornaQuestao() {
+        return "(" + this.getPeso() + ")" + this.getPergunta() + "\r";
     }
 
 }

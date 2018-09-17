@@ -41,4 +41,7 @@ abstract class Questao {
     public void setPeso(double peso) {
         this.peso = peso;
     }
+
+    abstract String retornaQuestao();
+
 }

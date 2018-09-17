@@ -5,15 +5,49 @@
  */
 package pkg01.geradorprova;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 /**
  *
  * @author 6093914
  */
 public class Prova {
-    
-    /**
-     * @return the nomeDisciplina
-     */
+
+    private String nomeDisciplina;
+    private double peso;
+    private String local;
+    private String data;
+    private ArrayList<Questao> questoes;
+
+    public Prova() {
+    }
+
+    public Prova(String n, int p, String local, String data) {
+        this.nomeDisciplina = n;
+        this.peso = p;
+        this.local = local;
+        this.data = data;
+    }
+
+    public String obtemDetalhes() {
+        return "Nome da disciplina: " + this.getNomeDisciplina() + "\r\n" + "Peso: " + this.getPeso() + "\r\n" + "Local: " + this.getLocal() + "\r\n" + "data: " + this.getData();
+    }
+
+    public String obtemProvaImpressao() {
+        String retorno = obtemDetalhes() + "\r\n============================\r\n";
+        String questao = "";
+        int j = 1;
+
+        for (int i = 0; i < this.questoes.size(); i++) {
+            questao += j;
+            questao += this.questoes.get(i).retornaQuestao();
+            j++;
+        }
+        retorno += questao;
+        return retorno;
+    }
+
     public String getNomeDisciplina() {
         return nomeDisciplina;
     }
@@ -28,14 +62,14 @@ public class Prova {
     /**
      * @return the peso
      */
-    public int getPeso() {
+    public double getPeso() {
         return peso;
     }
 
     /**
      * @param peso the peso to set
      */
-    public void setPeso(int peso) {
+    public void setPeso(double peso) {
         this.peso = peso;
     }
 
@@ -66,75 +100,12 @@ public class Prova {
     public void setData(String data) {
         this.data = data;
     }
-    private String nomeDisciplina;
-    private int peso;
-    private String local;
-    private String data;
-    private Discursiva[] discursiva;
-    private Objetiva[] objetiva;
-
-    public Prova() {
-        
-    }
-
-    public Prova(String n, int p, String local, String data) {
-        this.nomeDisciplina = n;
-        this.peso = p;
-        this.local = local;
-        this.data = data;
-    }
-
-    public String obtemDetalhes() {
-        return "Nome da disciplina: " + this.getNomeDisciplina() + "\n" + "Peso: " + this.getPeso() + "\n" + "Local: " + this.getLocal() + "\n" + "data: " + this.getData();
-    }
-    
-    public String obtemProvaImpressao(){
-        String retorno = obtemDetalhes()+"\n___________________\n";
-        String questao = "";
-        String questao2 = "";
-        int i, j;
-        for(i = 0; i<this.discursiva.length;i++){
-            questao += ("\n"+(i+1)+"("+this.discursiva[i].getPeso()+") - ");
-            questao += (this.discursiva[i].getPergunta()+"\n"); 
-        }
-        retorno += questao;
-        for(j=0; j<this.objetiva.length; j++){
-            questao2 += ("\n"+(i+1+j)+"("+this.objetiva[j].getPeso()+") - ");
-            questao2 += (this.objetiva[j].getPergunta()+"\n");
-            String[] opcoes = this.objetiva[j].getOpcoes();
-            for(int k = 0;k<5;k++){
-                questao2 += ((k+1)+") "+opcoes[k]+"\n");
-            }
-        }
-        retorno += questao2;
-        return retorno;
-    }
 
     /**
-     * @return the discursiva
+     * @param questoes the questoes to set
      */
-    public Discursiva[] getDiscursiva() {
-        return discursiva;
+    public void setQuestoes(ArrayList<Questao> questoes) {
+        this.questoes = questoes;
     }
 
-    /**
-     * @param discursiva the discursiva to set
-     */
-    public void setDiscursiva(Discursiva[] discursiva) {
-        this.discursiva = discursiva;
-    }
-
-    /**
-     * @return the objetiva
-     */
-    public Objetiva[] getObjetiva() {
-        return objetiva;
-    }
-
-    /**
-     * @param objetiva the objetiva to set
-     */
-    public void setObjetiva(Objetiva[] objetiva) {
-        this.objetiva = objetiva;
-    }
 }
