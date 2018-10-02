@@ -92,7 +92,7 @@ public class GeradorProva {
                         break;
                     } catch (Exception e) {
                         System.out.println(e.getMessage());
-                        System.out.println("Informe um valor valido para o peso!");
+                        JOptionPane.showInputDialog("Informe um valor valido para o peso!");
 
                     }
                 }
