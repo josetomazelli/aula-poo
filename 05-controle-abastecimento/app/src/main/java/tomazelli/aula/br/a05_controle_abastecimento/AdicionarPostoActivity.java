@@ -50,7 +50,7 @@ public class AdicionarPostoActivity extends AppCompatActivity {
             return;
         }
         if(Double.parseDouble(etkmAtual.getText().toString()) <= this.kmAntigo){
-            Toast.makeText(this.getApplicationContext(), "Km antigo maior q novo!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this.getApplicationContext(), "Km antigo maior que novo!", Toast.LENGTH_SHORT).show();
             return;
         }
 
