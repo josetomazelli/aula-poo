@@ -14,7 +14,10 @@ public class AbastecimentoViewHolder extends RecyclerView.ViewHolder {
     private TextView tvKm;
     private TextView tvLitros;
     private TextView tvData;
+    private TextView latd;
+    private TextView longt;
     private ImageView ivPosto;
+
 
     public AbastecimentoViewHolder(View itemView) {
         super(itemView);
@@ -22,12 +25,16 @@ public class AbastecimentoViewHolder extends RecyclerView.ViewHolder {
         this.tvLitros = itemView.findViewById(R.id.tvLitros);
         this.tvData = itemView.findViewById(R.id.tvData);
         this.ivPosto = itemView.findViewById(R.id.ivPosto);
+        this.latd = itemView.findViewById(R.id.latitude);
+        this.longt = itemView.findViewById(R.id.longitude);
     }
 
     public void atualizaGaveta(Abastecimento objetoAbastecimento){
         String km = "Km: " + String.valueOf(objetoAbastecimento.getKm());
         String litros = "Litros: " +String.valueOf(objetoAbastecimento.getLitro()) + " L";
         String posto = objetoAbastecimento.getNome();
+        String latitude = "Latitude:" +String.valueOf(objetoAbastecimento.getLatitude());
+        String longitute = "Longitude:" +String.valueOf(objetoAbastecimento.getLongitude());
 
         this.tvKm.setText(km);
         this.tvLitros.setText( litros );

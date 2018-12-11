@@ -7,6 +7,8 @@ public class Abastecimento {
     private Float Km;
     private Float litro;
     private String data;
+    private double latitude;
+    private  double longitude;
 
     public String getNome() {
         return Nome;
@@ -38,5 +40,21 @@ public class Abastecimento {
 
     public void setData(String data) {
         this.data = data;
+    }
+
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
     }
 }

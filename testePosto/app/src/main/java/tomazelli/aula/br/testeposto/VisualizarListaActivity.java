@@ -11,6 +11,7 @@ import android.widget.Toast;
 public class VisualizarListaActivity extends AppCompatActivity {
 
     private AbastecimentoAdapter adaptador;
+    private boolean permissao;
 
     private final int RC_ADICIONAR_ABASTECIMENTO = 1312;
 
@@ -36,6 +37,7 @@ public class VisualizarListaActivity extends AppCompatActivity {
             intencao.putExtra("kmAntigo", this.adaptador.listaAbastecimento.get(this.adaptador.listaAbastecimento.size() - 1).getKm());
         }
         startActivityForResult(intencao, RC_ADICIONAR_ABASTECIMENTO);
+        intencao.putExtra("permissao", permissao);
     }
     public void telaVoltar(View v){
         Intent intencao = new Intent(this.getApplicationContext(), MainActivity.class);
