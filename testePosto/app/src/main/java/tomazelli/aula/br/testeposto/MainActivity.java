@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void Lista(View v){
         Intent listar = new Intent(this.getApplicationContext(), VisualizarListaActivity.class);
-        listar.putExtra("permissao", permissao);
+
         startActivity(listar);
     }
 

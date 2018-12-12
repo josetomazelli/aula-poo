@@ -43,6 +43,11 @@ public class VisualizarListaActivity extends AppCompatActivity {
         Intent intencao = new Intent(this.getApplicationContext(), MainActivity.class);
         startActivity(intencao);
     }
+    public void telaMapa(View v){
+        Intent mapa = new Intent(this.getApplicationContext(), MapsActivity.class);
+
+        startActivity(mapa);
+    }
 
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {

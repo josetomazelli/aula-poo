@@ -14,9 +14,9 @@ public class AbastecimentoViewHolder extends RecyclerView.ViewHolder {
     private TextView tvKm;
     private TextView tvLitros;
     private TextView tvData;
-    private TextView latd;
-    private TextView longt;
     private ImageView ivPosto;
+    private TextView tvLat;
+    private TextView tvLng;
 
 
     public AbastecimentoViewHolder(View itemView) {
@@ -25,8 +25,8 @@ public class AbastecimentoViewHolder extends RecyclerView.ViewHolder {
         this.tvLitros = itemView.findViewById(R.id.tvLitros);
         this.tvData = itemView.findViewById(R.id.tvData);
         this.ivPosto = itemView.findViewById(R.id.ivPosto);
-        this.latd = itemView.findViewById(R.id.latitude);
-        this.longt = itemView.findViewById(R.id.longitude);
+        this.tvLat = itemView.findViewById(R.id.latitude);
+        this.tvLng = itemView.findViewById(R.id.longitude);
     }
 
     public void atualizaGaveta(Abastecimento objetoAbastecimento){
@@ -39,6 +39,8 @@ public class AbastecimentoViewHolder extends RecyclerView.ViewHolder {
         this.tvKm.setText(km);
         this.tvLitros.setText( litros );
         this.tvData.setText( objetoAbastecimento.getData() );
+        this.tvLat.setText(latitude);
+        this.tvLng.setText(longitute);
 
         if(posto.equals("Texaco")){
             ivPosto.setImageResource(R.drawable.untitled);
